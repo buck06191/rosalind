@@ -5,12 +5,14 @@ from pathlib import Path
 from count_bases import run_dna
 from dna_to_rna import run_rna
 from reverse_complement import run_revc
+from fibonacci import run_fib
 
 
 class ID(StrEnum):
     DNA = "DNA"
     RNA = "RNA"
     REVC = "REVC"
+    FIB = "FIB"
 
 
 data_path = Path(__file__).parent.parent / "data"
@@ -27,6 +29,9 @@ def run_rosalind(id: ID):
 
         case ID.REVC:
             run_revc(data_path)
+
+        case ID.FIB:
+            run_fib(data_path)
 
 
 if __name__ == "__main__":
