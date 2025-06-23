@@ -1,6 +1,6 @@
 from pathlib import Path
 
-from fasta import parse_fasta
+from .fasta import parse_fasta
 
 
 def gc_content(dna_string: str) -> float:

@@ -2,12 +2,7 @@ import argparse
 from enum import StrEnum
 from pathlib import Path
 
-from count_bases import run_dna
-from dna_to_rna import run_rna
-from reverse_complement import run_revc
-from fibonacci import run_fib
-from gc_content import run_gc
-from hamming_distance import run_hamm
+from src import run_dna, run_fib, run_gc, run_hamm, run_revc, run_rna, run_iprb
 
 
 class ID(StrEnum):
@@ -17,9 +12,10 @@ class ID(StrEnum):
     FIB = "FIB"
     GC = "GC"
     HAMM = "HAMM"
+    IPRB = "IPRB"
 
 
-data_path = Path(__file__).parent.parent / "data"
+data_path = Path(__file__).parent / "data"
 
 
 def run_rosalind(id: ID):
@@ -37,6 +33,8 @@ def run_rosalind(id: ID):
             run_gc(data_path)
         case ID.HAMM:
             run_hamm(data_path)
+        case ID.IPRB:
+            run_iprb(data_path)
 
 
 if __name__ == "__main__":
